@@ -1,0 +1,49 @@
+#主要配置
+jdbcUrl=jdbc:mysql://192.168.1.80:3706/play?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&&useSSL=false
+user=root
+password=root
+devMode=true
+engineDevMode=true
+#driverClass=net.sf.log4jdbc.DriverSpy
+
+# 小程序app_id,app_secret
+mini_program_app_id=
+mini_program_app_secret=
+
+### 签到奖励数量
+sign_reward=1
+
+### 图片上传地址
+upload_path=/home/play/images
+qrcode_upload_path=/home/play/images/qrcode
+
+### 项目访问根地址
+baseUrl=
+
+
+### 小程序消息模版推送，每天9点半，提醒挖矿
+cron4j=message
+message.cron=30 09 * * *
+message.class=com.cser.play.common.task.MessageTask
+message.enable=true
+
+
+### redis相关配置  ### begin
+#访问地址
+redis_host=192.168.1.80
+#访问端口
+redis_port=6379
+#注意，如果没有password，此处不设置值，但这一项要保留
+redis_password=123456
+ 
+#最大空闲数，数据库连接的最大空闲时间。超过空闲时间，数据库连接将被标记为不可用，然后被释放。设为0表示无限制。
+redis_maxIdle=300
+#连接池的最大数据库连接数。设为0表示无限制
+redis_maxTotal=600
+#最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。单位 秒
+redis_maxWait=2
+#在borrow一个jedis实例时，是否提前进行alidate操作；如果为true，则得到的jedis实例均是可用的；
+redis_testOnBorrow=true
+#超时时间
+redis_timeout=2
+### redis相关配置  ### end
